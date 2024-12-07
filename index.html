@@ -1,42 +1,39 @@
-<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-  </head>
-  <body>
-    <canvas id="myChart"></canvas>
-    <div id="app"></div>
-    <button onclick="showSth()">click me</button>
-  </body>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script>
-    const ctx = document.getElementById("myChart");
+</head>
+<body>
+    <div id="root"></div>
+</body>
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script type="text/javascript" src="https://unpkg.com/babel-standalone@6/babel.js"></script>
 
-    new Chart(ctx, {
-      type: "bar",
-      data: {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-        datasets: [
-          {
-            label: "# of Votes",
-            data: [12, 19, 3, 5, 2, 3],
-            borderWidth: 1,
-          },
-        ],
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-          },
-        },
-      },
-    });
-
-    function showSth() {
-      document.getElementById("app").innerText = "app";
+<script type="text/babel">
+    // Define a component called Greetings
+    function Greetings() {
+      return <h1>Hello readers, Thankyou for reading this blog !</h1>;
     }
+
+    function Aboutus(){
+        return <div>About Us</div>
+    }
+
+    function Contactus(){
+        return <div>Contact Us</div>
+    }
+  
+    // Render the component to the DOM
+    ReactDOM.render(
+        <div>
+            <Greetings />
+            <Aboutus/>
+            <Contactus/>         
+        </div>,
+      document.getElementById("root")
+    );
   </script>
+
 </html>
